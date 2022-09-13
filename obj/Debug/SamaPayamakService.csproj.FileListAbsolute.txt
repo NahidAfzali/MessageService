@@ -1,0 +1,13 @@
+D:\SamaTools\Karaj\SamaPayamakService\bin\Debug\SamaPayamakService.exe.config
+D:\SamaTools\Karaj\SamaPayamakService\bin\Debug\SamaPayamakService.exe.manifest
+D:\SamaTools\Karaj\SamaPayamakService\bin\Debug\SamaPayamakService.application
+D:\SamaTools\Karaj\SamaPayamakService\bin\Debug\SamaPayamakService.exe
+D:\SamaTools\Karaj\SamaPayamakService\bin\Debug\SamaPayamakService.pdb
+D:\SamaTools\Karaj\SamaPayamakService\obj\Debug\SamaPayamakService.ProjectInstaller.resources
+D:\SamaTools\Karaj\SamaPayamakService\obj\Debug\SamaPayamakService.csproj.GenerateResource.cache
+D:\SamaTools\Karaj\SamaPayamakService\obj\Debug\SamaPayamakService.csproj.CoreCompileInputs.cache
+D:\SamaTools\Karaj\SamaPayamakService\obj\Debug\SamaPayamakService.exe.manifest
+D:\SamaTools\Karaj\SamaPayamakService\obj\Debug\SamaPayamakService.application
+D:\SamaTools\Karaj\SamaPayamakService\obj\Debug\SamaPayamakService.exe
+D:\SamaTools\Karaj\SamaPayamakService\obj\Debug\SamaPayamakService.pdb
+D:\SamaTools\Karaj\SamaPayamakService\obj\Debug\SamaPayamakService.csproj.AssemblyReference.cache

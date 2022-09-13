@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "d27568de-a5ea-40cd-bbe5-e244e4e3a93a": {
+      "ProjectGuid": "d27568de-a5ea-40cd-bbe5-e244e4e3a93a",
+      "DisplayName": "MessageService",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}

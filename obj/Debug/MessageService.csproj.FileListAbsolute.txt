@@ -1,0 +1,14 @@
+H:\Software\SamaTools2021\Karaj\MessageService\bin\Debug\SamaPayamakService.exe.config
+H:\Software\SamaTools2021\Karaj\MessageService\bin\Debug\SamaPayamakService.exe.manifest
+H:\Software\SamaTools2021\Karaj\MessageService\bin\Debug\SamaPayamakService.application
+H:\Software\SamaTools2021\Karaj\MessageService\bin\Debug\SamaPayamakService.exe
+H:\Software\SamaTools2021\Karaj\MessageService\bin\Debug\SamaPayamakService.pdb
+H:\Software\SamaTools2021\Karaj\MessageService\obj\Debug\MessageService.csproj.AssemblyReference.cache
+H:\Software\SamaTools2021\Karaj\MessageService\obj\Debug\MessageService.csproj.SuggestedBindingRedirects.cache
+H:\Software\SamaTools2021\Karaj\MessageService\obj\Debug\SamaPayamakService.ProjectInstaller.resources
+H:\Software\SamaTools2021\Karaj\MessageService\obj\Debug\MessageService.csproj.GenerateResource.cache
+H:\Software\SamaTools2021\Karaj\MessageService\obj\Debug\MessageService.csproj.CoreCompileInputs.cache
+H:\Software\SamaTools2021\Karaj\MessageService\obj\Debug\SamaPayamakService.exe.manifest
+H:\Software\SamaTools2021\Karaj\MessageService\obj\Debug\SamaPayamakService.application
+H:\Software\SamaTools2021\Karaj\MessageService\obj\Debug\SamaPayamakService.exe
+H:\Software\SamaTools2021\Karaj\MessageService\obj\Debug\SamaPayamakService.pdb

@@ -1,0 +1,725 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfBoolean">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="boolean" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfMessagesBL">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="MessagesBL" type="tns:MessagesBL" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="BaseBL" />
+      <s:complexType name="MessagesBL">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:BaseBL">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="MsgID" type="s:long" />
+              <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="LinkID" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="NumberID" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="Tariff" type="s:double" />
+              <s:element minOccurs="1" maxOccurs="1" name="MsgType" type="s:unsignedByte" />
+              <s:element minOccurs="0" maxOccurs="1" name="Body" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Udh" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="SendDate" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Sender" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Receiver" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="FirstLocation" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="CurrentLocation" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="Parts" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsFlash" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsRead" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsUnicode" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="Credit" type="s:double" />
+              <s:element minOccurs="1" maxOccurs="1" name="Module" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="RecCount" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="RecFailed" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="RecSuccess" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsMoneyBack" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="UserStepedMaster" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="UserMaster" type="s:int" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfLong">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="long" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfbyte">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="byte" type="s:byte" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SendSms">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="to" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="text" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="isflash" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="udh" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="recId" type="tns:ArrayOfLong" />
+            <s:element minOccurs="0" maxOccurs="1" name="status" type="tns:ArrayOfbyte" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendSmsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SendSmsResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="recId" type="tns:ArrayOfLong" />
+            <s:element minOccurs="0" maxOccurs="1" name="status" type="tns:ArrayOfbyte" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CorrespondSMS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="to" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="text" type="tns:ArrayOfString" />
+            <s:element minOccurs="1" maxOccurs="1" name="isflash" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CorrespondSMSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CorrespondSMSResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendSimpleSMS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="to" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="text" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="isflash" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendSimpleSMSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SendSimpleSMSResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCredit">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCreditResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetCreditResult" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendBulkSMS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="to" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="text" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="isflash" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendBulkSMSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SendBulkSMSResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendBulkTextToVoice">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="to" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="text" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendBulkTextToVoiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SendBulkTextToVoiceResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSendTextToVoiceStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="recid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSendTextToVoiceStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetSendTextToVoiceStatusResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendBulkVoice">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="to" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="recordid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendBulkVoiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SendBulkVoiceResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSendVoiceStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="recid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSendVoiceStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetSendVoiceStatusResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Authentication">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuthenticationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AuthenticationResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPacketCountNumber">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="shortcode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPacketCountNumberResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetPacketCountNumberResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllShortNumbers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllShortNumbersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetAllShortNumbersResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeliveryBulkSMS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="returnId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeliveryBulkSMSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeliveryBulkSMSResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDelivery">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="recId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDeliveryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetDeliveryResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInboxCount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="isRead" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInboxCountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetInboxCountResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInboxCount2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="isRead" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInboxCount2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetInboxCountResult2" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetExpireDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetExpireDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetExpireDateResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getMessages">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="location" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="index" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="count" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getMessagesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getMessagesResult" type="tns:ArrayOfMessagesBL" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SendSmsSoapIn">
+    <wsdl:part name="parameters" element="tns:SendSms" />
+  </wsdl:message>
+  <wsdl:message name="SendSmsSoapOut">
+    <wsdl:part name="parameters" element="tns:SendSmsResponse" />
+  </wsdl:message>
+  <wsdl:message name="CorrespondSMSSoapIn">
+    <wsdl:part name="parameters" element="tns:CorrespondSMS" />
+  </wsdl:message>
+  <wsdl:message name="CorrespondSMSSoapOut">
+    <wsdl:part name="parameters" element="tns:CorrespondSMSResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendSimpleSMSSoapIn">
+    <wsdl:part name="parameters" element="tns:SendSimpleSMS" />
+  </wsdl:message>
+  <wsdl:message name="SendSimpleSMSSoapOut">
+    <wsdl:part name="parameters" element="tns:SendSimpleSMSResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCreditSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCredit" />
+  </wsdl:message>
+  <wsdl:message name="GetCreditSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCreditResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendBulkSMSSoapIn">
+    <wsdl:part name="parameters" element="tns:SendBulkSMS" />
+  </wsdl:message>
+  <wsdl:message name="SendBulkSMSSoapOut">
+    <wsdl:part name="parameters" element="tns:SendBulkSMSResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendBulkTextToVoiceSoapIn">
+    <wsdl:part name="parameters" element="tns:SendBulkTextToVoice" />
+  </wsdl:message>
+  <wsdl:message name="SendBulkTextToVoiceSoapOut">
+    <wsdl:part name="parameters" element="tns:SendBulkTextToVoiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSendTextToVoiceStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSendTextToVoiceStatus" />
+  </wsdl:message>
+  <wsdl:message name="GetSendTextToVoiceStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSendTextToVoiceStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendBulkVoiceSoapIn">
+    <wsdl:part name="parameters" element="tns:SendBulkVoice" />
+  </wsdl:message>
+  <wsdl:message name="SendBulkVoiceSoapOut">
+    <wsdl:part name="parameters" element="tns:SendBulkVoiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSendVoiceStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSendVoiceStatus" />
+  </wsdl:message>
+  <wsdl:message name="GetSendVoiceStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSendVoiceStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="AuthenticationSoapIn">
+    <wsdl:part name="parameters" element="tns:Authentication" />
+  </wsdl:message>
+  <wsdl:message name="AuthenticationSoapOut">
+    <wsdl:part name="parameters" element="tns:AuthenticationResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPacketCountNumberSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPacketCountNumber" />
+  </wsdl:message>
+  <wsdl:message name="GetPacketCountNumberSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPacketCountNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllShortNumbersSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllShortNumbers" />
+  </wsdl:message>
+  <wsdl:message name="GetAllShortNumbersSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllShortNumbersResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeliveryBulkSMSSoapIn">
+    <wsdl:part name="parameters" element="tns:DeliveryBulkSMS" />
+  </wsdl:message>
+  <wsdl:message name="DeliveryBulkSMSSoapOut">
+    <wsdl:part name="parameters" element="tns:DeliveryBulkSMSResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDeliverySoapIn">
+    <wsdl:part name="parameters" element="tns:GetDelivery" />
+  </wsdl:message>
+  <wsdl:message name="GetDeliverySoapOut">
+    <wsdl:part name="parameters" element="tns:GetDeliveryResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetInboxCountSoapIn">
+    <wsdl:part name="parameters" element="tns:GetInboxCount" />
+  </wsdl:message>
+  <wsdl:message name="GetInboxCountSoapOut">
+    <wsdl:part name="parameters" element="tns:GetInboxCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetInboxCount2SoapIn">
+    <wsdl:part name="parameters" element="tns:GetInboxCount2" />
+  </wsdl:message>
+  <wsdl:message name="GetInboxCount2SoapOut">
+    <wsdl:part name="parameters" element="tns:GetInboxCount2Response" />
+  </wsdl:message>
+  <wsdl:message name="GetExpireDateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetExpireDate" />
+  </wsdl:message>
+  <wsdl:message name="GetExpireDateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetExpireDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="getMessagesSoapIn">
+    <wsdl:part name="parameters" element="tns:getMessages" />
+  </wsdl:message>
+  <wsdl:message name="getMessagesSoapOut">
+    <wsdl:part name="parameters" element="tns:getMessagesResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SendSoap">
+    <wsdl:operation name="SendSms">
+      <wsdl:input message="tns:SendSmsSoapIn" />
+      <wsdl:output message="tns:SendSmsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CorrespondSMS">
+      <wsdl:input message="tns:CorrespondSMSSoapIn" />
+      <wsdl:output message="tns:CorrespondSMSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendSimpleSMS">
+      <wsdl:input message="tns:SendSimpleSMSSoapIn" />
+      <wsdl:output message="tns:SendSimpleSMSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCredit">
+      <wsdl:input message="tns:GetCreditSoapIn" />
+      <wsdl:output message="tns:GetCreditSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendBulkSMS">
+      <wsdl:input message="tns:SendBulkSMSSoapIn" />
+      <wsdl:output message="tns:SendBulkSMSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendBulkTextToVoice">
+      <wsdl:input message="tns:SendBulkTextToVoiceSoapIn" />
+      <wsdl:output message="tns:SendBulkTextToVoiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSendTextToVoiceStatus">
+      <wsdl:input message="tns:GetSendTextToVoiceStatusSoapIn" />
+      <wsdl:output message="tns:GetSendTextToVoiceStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendBulkVoice">
+      <wsdl:input message="tns:SendBulkVoiceSoapIn" />
+      <wsdl:output message="tns:SendBulkVoiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSendVoiceStatus">
+      <wsdl:input message="tns:GetSendVoiceStatusSoapIn" />
+      <wsdl:output message="tns:GetSendVoiceStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Authentication">
+      <wsdl:input message="tns:AuthenticationSoapIn" />
+      <wsdl:output message="tns:AuthenticationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPacketCountNumber">
+      <wsdl:input message="tns:GetPacketCountNumberSoapIn" />
+      <wsdl:output message="tns:GetPacketCountNumberSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllShortNumbers">
+      <wsdl:input message="tns:GetAllShortNumbersSoapIn" />
+      <wsdl:output message="tns:GetAllShortNumbersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeliveryBulkSMS">
+      <wsdl:input message="tns:DeliveryBulkSMSSoapIn" />
+      <wsdl:output message="tns:DeliveryBulkSMSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDelivery">
+      <wsdl:input message="tns:GetDeliverySoapIn" />
+      <wsdl:output message="tns:GetDeliverySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInboxCount">
+      <wsdl:input message="tns:GetInboxCountSoapIn" />
+      <wsdl:output message="tns:GetInboxCountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInboxCount2">
+      <wsdl:input message="tns:GetInboxCount2SoapIn" />
+      <wsdl:output message="tns:GetInboxCount2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExpireDate">
+      <wsdl:input message="tns:GetExpireDateSoapIn" />
+      <wsdl:output message="tns:GetExpireDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getMessages">
+      <wsdl:input message="tns:getMessagesSoapIn" />
+      <wsdl:output message="tns:getMessagesSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SendSoap" type="tns:SendSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SendSms">
+      <soap:operation soapAction="http://tempuri.org/SendSms" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CorrespondSMS">
+      <soap:operation soapAction="http://tempuri.org/CorrespondSMS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendSimpleSMS">
+      <soap:operation soapAction="http://tempuri.org/SendSimpleSMS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCredit">
+      <soap:operation soapAction="http://tempuri.org/GetCredit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendBulkSMS">
+      <soap:operation soapAction="http://tempuri.org/SendBulkSMS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendBulkTextToVoice">
+      <soap:operation soapAction="http://tempuri.org/SendBulkTextToVoice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSendTextToVoiceStatus">
+      <soap:operation soapAction="http://tempuri.org/GetSendTextToVoiceStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendBulkVoice">
+      <soap:operation soapAction="http://tempuri.org/SendBulkVoice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSendVoiceStatus">
+      <soap:operation soapAction="http://tempuri.org/GetSendVoiceStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Authentication">
+      <soap:operation soapAction="http://tempuri.org/Authentication" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPacketCountNumber">
+      <soap:operation soapAction="http://tempuri.org/GetPacketCountNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllShortNumbers">
+      <soap:operation soapAction="http://tempuri.org/GetAllShortNumbers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeliveryBulkSMS">
+      <soap:operation soapAction="http://tempuri.org/DeliveryBulkSMS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDelivery">
+      <soap:operation soapAction="http://tempuri.org/GetDelivery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInboxCount">
+      <soap:operation soapAction="http://tempuri.org/GetInboxCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInboxCount2">
+      <soap:operation soapAction="http://tempuri.org/GetInboxCount2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExpireDate">
+      <soap:operation soapAction="http://tempuri.org/GetExpireDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMessages">
+      <soap:operation soapAction="http://tempuri.org/getMessages" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Send">
+    <wsdl:port name="SendSoap" binding="tns:SendSoap">
+      <soap:address location="http://79.175.169.235/Post/Send.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
